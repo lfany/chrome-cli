@@ -71,6 +71,8 @@
     }
 
     Arguments *arguments = [[Arguments alloc] initWithDictionary:captureGroups];
+
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [self->_target performSelector:self->_action withObject:arguments];
 }
 
